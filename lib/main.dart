@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'login_page.dart'; // tambahkan ini
 
 void main() {
   runApp(const MyApp());
@@ -44,7 +45,7 @@ class MyHomePage extends StatelessWidget {
             children: [
               // Logo
               Image.asset(
-                'assets/logo.png', // ganti dengan file logo kamu
+                'assets/logo.png',
                 width: 120,
                 height: 120,
               ),
@@ -59,6 +60,29 @@ class MyHomePage extends StatelessWidget {
                   color: Colors.white,
                 ),
                 textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 40),
+
+              // Button navigasi ke Login Page
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPage(),
+                    ),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 40,
+                    vertical: 15,
+                  ),
+                ),
+                child: const Text(
+                  "Go to Login",
+                  style: TextStyle(fontSize: 16),
+                ),
               ),
             ],
           ),
